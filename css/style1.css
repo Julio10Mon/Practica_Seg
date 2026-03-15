@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: #030510;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.container{
+    width:85%;
+    max-width:1200px;
+}
+
+.subtitle{
+    font-size:48px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:80px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+}
+
+.title span:first-child{
+    background: linear-gradient(90deg, #00f5a0, #00c3ff);
+    background-clip: text;              /* estándar */
+    -webkit-background-clip: text;      /* Chrome/Safari */
+    color: transparent;
+}
+
+.cursor{
+    margin-left:5px;
+    color:#00f5a0;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{ opacity:0; }
+}
+
+.description{
+    margin-top:25px;
+    font-size:20px;
+    color:#8ca3c7;
+}
+
+.dots{
+    display:inline-flex;
+    gap:8px;
+    margin-left:8px;
+    align-items:center;
+}
+
+.square{
+    width:8px;
+    height:8px;
+    opacity:0.3;
+    animation: pulse 1.2s infinite ease-in-out;
+}
+
+.s1{ background:#40D194; animation-delay:0s; }
+.s2{ background:#28D1ED; animation-delay:0.2s; }
+.s3{ background:#ffffff; animation-delay:0.4s; }
+
+@keyframes pulse{
+    0%{ opacity:0.3; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.3); }
+    100%{ opacity:0.3; transform:scale(1); }
+}
+
+.buttons{
+    margin-top:40px;
+}
+
+.btn-primary{
+    background: #0D3D3D;
+    border:none;
+    padding:14px 28px;
+    border-radius:25px;
+    color:#40D194;
+    font-weight:600;
+    cursor:pointer;
+    margin-right:20px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:scale(1.05);
+}
+
+.btn-secondary{
+    background:none;
+    border:none;
+    color:#A1B1C7;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.btn-secondary:hover{
+    color:white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Opcional: Para asegurar que el contenedor no mueva el título, 
+puedes envolver los botones y el form en un div con altura mínima */
+.buttons-wrapper {
+    min-height: 250px; /* Esto reserva el espacio abajo para que nada se mueva arriba */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

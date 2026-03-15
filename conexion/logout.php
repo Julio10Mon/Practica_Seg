@@ -1,0 +1,10 @@
+<?php
+session_start();
+// Destruir todas las variables de sesión
+$_SESSION = array();
+// Destruir la sesión físicamente
+session_destroy();
+// Redirigir al inicio
+header("Location: ../index.php");
+exit();
+?>

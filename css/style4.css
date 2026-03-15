@@ -1,0 +1,1651 @@
+/* =========================================================
+   SkillMapAI · style4.css (PERFIL - LIMPIO / PROFESIONAL)
+   PULIDO TOTAL · SIN QUITAR NADA · SIN ERRORES
+   ========================================================= */
+
+/* =========================================================
+   RESET + BASE
+   ========================================================= */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+  color:#E9EEF7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Variables globales suaves (consistencia visual) */
+.page--perfil{
+  --c-bg: #0b0f1a;
+  --c-text: #E9EEF7;
+  --c-muted: rgba(233,238,247,.72);
+  --c-border: rgba(255,255,255,.08);
+  --c-border-strong: rgba(255,255,255,.12);
+  --c-glass: rgba(255,255,255,.03);
+  --c-glass-2: rgba(255,255,255,.05);
+  --c-primary: #10b981;
+  --c-primary-2: #00dcc8;
+  --c-blue: #3AA8FF;
+  --c-danger: #ef4444;
+
+  --r-sm: 12px;
+  --r-md: 14px;
+  --r-lg: 16px;
+  --r-xl: 18px;
+
+  --shadow-1: 0 10px 22px rgba(0,0,0,.25);
+  --shadow-2: 0 14px 40px rgba(0,0,0,.35);
+  --shadow-3: 0 18px 60px rgba(0,0,0,.55);
+
+  --focus: 0 0 0 3px rgba(16,185,129,.14), 0 0 0 1px rgba(16,185,129,.45) inset;
+}
+
+/* Anti-overflow global dentro de la página */
+.page--perfil *{ min-width:0; }
+.page--perfil img,
+.page--perfil svg,
+.page--perfil video{
+  max-width:100%;
+  height:auto;
+}
+
+/* Mejor wrap de títulos por si son largos */
+.page--perfil .pageheader__title,
+.page--perfil .card__title,
+.page--perfil .section-title,
+.page--perfil .section__title{
+  overflow-wrap:anywhere;
+}
+
+/* =========================================================
+   FONDO
+   ========================================================= */
+.page--perfil.app--dark{
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(0, 180, 160, .12), transparent 55%),
+    radial-gradient(900px 600px at 80% 20%, rgba(70, 120, 255, .12), transparent 55%),
+    linear-gradient(180deg, #050A14 0%, #040812 100%);
+  min-height:100vh;
+}
+
+/* =========================================================
+   LAYOUT APP
+   ========================================================= */
+.page--perfil .layout{
+  display:grid;
+  grid-template-columns: 270px 1fr;
+  min-height:100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+.page--perfil .sidebar{
+  position:sticky;
+  top:0;
+  height:100vh;
+  padding:18px 14px;
+  background: linear-gradient(180deg, rgba(10, 18, 35, .80), rgba(7, 12, 25, .88));
+  border-right:1px solid rgba(255,255,255,.07);
+  backdrop-filter: blur(14px);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  overflow:hidden;
+  box-shadow: 12px 0 40px rgba(0,0,0,.22);
+}
+
+.page--perfil .sidebar__brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 10px 14px;
+  border-radius:16px;
+}
+
+.page--perfil .brand__icon{
+  width:40px;
+  height:40px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(135deg, rgba(0, 220, 200, .22), rgba(0, 120, 255, .18));
+  border:1px solid rgba(255,255,255,.10);
+  color:#7FF6E6;
+  font-size:18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+}
+
+.page--perfil .brand__text{ display:flex; flex-direction:column; min-width:0; }
+.page--perfil .brand__name{ font-weight:900; letter-spacing:.2px; }
+.page--perfil .brand__tag{ font-size:12px; opacity:.75; margin-top:2px; }
+
+/* Nav */
+.page--perfil .sidebar__nav{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:6px 8px;
+}
+
+.page--perfil .nav__item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 12px;
+  border-radius:14px;
+  color:rgba(233,238,247,.88);
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.02);
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  min-width:0;
+}
+
+.page--perfil .nav__item:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.11);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+.page--perfil .nav__item.is-active{
+  background: linear-gradient(135deg, rgba(0, 220, 200, .18), rgba(0, 110, 255, .12));
+  border-color: rgba(0, 220, 200, .20);
+  color:#EFFFFC;
+}
+
+/* icon cajita */
+.page--perfil .nav__icon{
+  width:26px;
+  height:26px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.07);
+  font-size:13px;
+  opacity:.95;
+  line-height:1;
+  font-family: "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",system-ui,sans-serif;
+  flex: 0 0 auto;
+}
+
+.page--perfil .nav__label{
+  font-size:14px;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Sidebar footer */
+.page--perfil .sidebar__footer{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:10px 8px;
+}
+
+.page--perfil .userchip{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:16px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  overflow:hidden;
+  min-width:0;
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+.page--perfil .userchip__avatar{
+  width:42px;
+  height:42px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  color:#0A111F;
+  font-weight:900;
+  background: linear-gradient(135deg, #2EF6DA, #3AA8FF);
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+  flex: 0 0 auto;
+}
+
+.page--perfil .userchip__info{ min-width:0; }
+.page--perfil .userchip__name{ font-weight:900; line-height:1.1; }
+.page--perfil .userchip__mail{
+  font-size:12px;
+  opacity:.72;
+  margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width: 180px;
+}
+
+.page--perfil .logout{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 12px;
+  border-radius:14px;
+  text-decoration:none;
+  color:rgba(233,238,247,.88);
+  border:1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.02);
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.page--perfil .logout:hover{
+  transform: translateY(-1px);
+  background: rgba(255,70,70,.07);
+  border-color: rgba(255,70,70,.22);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+/* =========================================================
+   MAIN + CONTENEDOR
+   ========================================================= */
+.page--perfil .main{
+  padding: 26px 28px;
+  overflow-x:hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.14) transparent;
+}
+.page--perfil .main::-webkit-scrollbar{ width:10px; }
+.page--perfil .main::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.10);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.page--perfil .container{
+  max-width: 1180px;
+  width:100%;
+  margin: 0 auto;
+
+  /* ✅ MÁS AIRE A LOS LADOS (evita que botones/elementos queden pegados a la esquina) */
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Header */
+.page--perfil .pageheader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom: 14px;
+}
+.page--perfil .pageheader > *{ min-width:0; }
+
+.page--perfil .pageheader__title{
+  margin:0;
+  font-size:28px;
+  letter-spacing:.2px;
+  font-weight:900;
+  line-height: 1.15;
+}
+
+.page--perfil .pageheader__subtitle{
+  margin:8px 0 0;
+  font-size:14px;
+  opacity:.80;
+  max-width: 720px;
+  line-height:1.55;
+}
+
+/* =========================================================
+   CARD BASE
+   ========================================================= */
+.page--perfil .card{
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(12px);
+  overflow:hidden;
+  position: relative;
+}
+.page--perfil .card:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: inherit;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 220px at 20% 0%, rgba(0,230,194,.10), transparent 55%),
+    radial-gradient(900px 220px at 80% 0%, rgba(58,168,255,.09), transparent 55%);
+  opacity:.85;
+}
+.page--perfil .card--lg{ min-height: 220px; }
+.page--perfil .mt-lg{ margin-top: 16px; }
+
+.page--perfil .card__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 18px 10px;
+  position: relative;
+  z-index: 1;
+}
+.page--perfil .card__head > *{ min-width:0; }
+
+.page--perfil .card__title{
+  margin:0;
+  font-size:16px;
+  letter-spacing:.2px;
+  font-weight:900;
+}
+.page--perfil .card__body{
+  padding:10px 18px 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   BUTTONS (UNIFICADOS)
+   ========================================================= */
+.page--perfil .btn{
+  border:0;
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:900;
+  letter-spacing:.2px;
+  cursor:pointer;
+  transition: transform .12s ease, filter .12s ease, opacity .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  user-select:none;
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+.page--perfil .btn:disabled{ opacity:.55; cursor:not-allowed; }
+.page--perfil .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+.page--perfil .btn:active{ transform: translateY(0) scale(.98); }
+
+.page--perfil .btn--primary{
+  background: linear-gradient(135deg, rgba(0, 220, 200, .92), rgba(0, 120, 255, .86));
+  color:#061022;
+  box-shadow: 0 12px 26px rgba(0, 180, 160, .15);
+}
+.page--perfil .btn--primary:hover{ filter: brightness(1.05); }
+
+.page--perfil .btn--danger,
+.page--perfil .btn-red-delete{
+  background: rgba(239, 68, 68, .10);
+  border: 1px solid rgba(239, 68, 68, .22);
+  color:#FCA5A5;
+  padding:8px 10px;
+  border-radius:10px;
+  font-weight:900;
+  font-size:12px;
+  box-shadow: 0 10px 22px rgba(239,68,68,.08);
+}
+.page--perfil .btn--danger:hover,
+.page--perfil .btn-red-delete:hover{
+  background: rgba(239, 68, 68, .16);
+  border-color: rgba(239, 68, 68, .35);
+}
+
+/* Focus (accesible y pro) */
+.page--perfil .btn:focus-visible,
+.page--perfil .btn-green-add:focus-visible,
+.page--perfil .btn-green-action:focus-visible,
+.page--perfil .btn-cancel:focus-visible,
+.page--perfil .btn-cancel-modal:focus-visible,
+.page--perfil .btn-secondary-cancel:focus-visible,
+.page--perfil .tab:focus-visible,
+.page--perfil button:focus-visible,
+.page--perfil a:focus-visible,
+.page--perfil input:focus-visible,
+.page--perfil select:focus-visible,
+.page--perfil textarea:focus-visible{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: rgba(16,185,129,.45) !important;
+}
+
+/* =========================================================
+   TABS
+   ========================================================= */
+.page--perfil .profile-tabs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:14px 0 0;
+  padding:6px;
+  border-radius:14px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  overflow-x:auto;
+  white-space:nowrap;
+  scrollbar-width: thin;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+.page--perfil .profile-tabs::-webkit-scrollbar{ height:8px; }
+.page--perfil .profile-tabs::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.10);
+  border-radius:999px;
+}
+
+.page--perfil .tab{
+  background: transparent;
+  border:1px solid transparent;
+  padding:9px 14px;
+  border-radius:12px;
+  color: rgba(233,238,247,.70);
+  font-weight:900;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition: background .12s ease, border-color .12s ease, color .12s ease, transform .12s ease;
+  flex: 0 0 auto;
+  text-decoration:none;
+}
+.page--perfil .tab:hover{
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.12);
+  color:#fff;
+  transform: translateY(-1px);
+}
+.page--perfil .tab.is-active{
+  background: linear-gradient(135deg, rgba(0, 220, 200, .14), rgba(0, 110, 255, .10));
+  border-color: rgba(0, 220, 200, .18);
+  color:#EFFFFC;
+}
+
+/* Contenido tabs */
+.tab-content{ display:none; }
+.tab-content.is-active{ display:block; }
+
+/* =========================================================
+   PERFIL CARD (Info personal)
+   ========================================================= */
+.page--perfil .profile-card-body{ padding: 16px 18px 18px; }
+
+.page--perfil .profile-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.page--perfil .profile-avatar{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  font-weight:900;
+  background: linear-gradient(135deg, #2EF6DA, #3AA8FF);
+  color:#061022;
+  flex: 0 0 auto;
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+.page--perfil .profile-name{ font-size:18px; font-weight:900; }
+.page--perfil .profile-sub{
+  font-size:13px;
+  opacity:.75;
+  margin-top:4px;
+  word-break: break-word;
+  line-height:1.45;
+}
+
+.page--perfil .profile-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:16px;
+}
+
+.page--perfil .profile-item{
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:16px;
+  padding:14px;
+  min-width:0;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.page--perfil .profile-item span{ font-size:12px; opacity:.75; }
+.page--perfil .profile-item strong{
+  display:block;
+  margin-top:6px;
+  font-size:14px;
+  font-weight:900;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* =========================================================
+   SECCIONES + BOTÓN AGREGAR
+   ========================================================= */
+.page--perfil .header-section,
+.page--perfil .section__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  margin: 8px 0 14px;
+}
+.page--perfil .header-section > *,
+.page--perfil .section__head > *{ min-width:0; }
+
+.page--perfil .section-title,
+.page--perfil .section__title{
+  margin:0;
+  font-size:18px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.page--perfil .section-subtitle,
+.page--perfil .section__subtitle{
+  margin:6px 0 0;
+  opacity:.70;
+  font-size:13px;
+  max-width: 760px;
+  line-height:1.5;
+}
+
+.page--perfil .btn-green-add{
+  background: linear-gradient(135deg, rgba(16,185,129,1), rgba(0,220,200,1));
+  color:#061022;
+  border:0;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  flex: 0 0 auto;
+  box-shadow: 0 12px 26px rgba(16,185,129,.12);
+}
+.page--perfil .btn-green-add:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Botón “suelto” por si no trae clase */
+.page--perfil .card__head button:not([class]),
+.page--perfil .header-section button:not([class]),
+.page--perfil .section__head button:not([class]),
+.page--perfil .card__head a:not([class]),
+.page--perfil .header-section a:not([class]),
+.page--perfil .section__head a:not([class]),
+.page--perfil .btn-new,
+.page--perfil .btn-nuevo,
+.page--perfil .btn--new,
+.page--perfil .new-btn,
+.page--perfil .btn-add-new,
+.page--perfil .btn-add-project,
+.page--perfil .btn-new-project,
+.page--perfil .project-new,
+.page--perfil .project-add{
+  appearance:none;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  color: var(--c-text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease, box-shadow .12s ease;
+  box-shadow: var(--shadow-1);
+}
+.page--perfil .card__head button:not([class]):hover,
+.page--perfil .header-section button:not([class]):hover,
+.page--perfil .section__head button:not([class]):hover,
+.page--perfil .card__head a:not([class]):hover,
+.page--perfil .header-section a:not([class]):hover,
+.page--perfil .section__head a:not([class]):hover,
+.page--perfil .btn-new:hover,
+.page--perfil .btn-nuevo:hover,
+.page--perfil .btn--new:hover,
+.page--perfil .new-btn:hover,
+.page--perfil .btn-add-new:hover,
+.page--perfil .btn-add-project:hover,
+.page--perfil .btn-new-project:hover,
+.page--perfil .project-new:hover,
+.page--perfil .project-add:hover{
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, rgba(16,185,129,.10), rgba(58,168,255,.06));
+  border-color: rgba(16,185,129,.28);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+/* =========================================================
+   LISTA SUPERIOR + BARRAS
+   ========================================================= */
+.page--perfil .item-list,
+.page--perfil .tech-list{
+  display:grid;
+  gap:12px;
+  margin: 14px 0 6px;
+}
+
+.page--perfil .tech-item-header,
+.page--perfil .tech-row{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 12px;
+  overflow:hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.page--perfil .tech-item-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.page--perfil .tech-item-header strong{
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(233,241,255,.92);
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.page--perfil .tech-item-header form{ flex: 0 0 auto; }
+
+.page--perfil .progress-container,
+.page--perfil .progress-track{
+  height:10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+  overflow:hidden;
+  margin-top: 10px;
+}
+
+.page--perfil .progress-bar,
+.page--perfil .progress-fill{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(16,185,129,1), rgba(0,220,200,1));
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+
+/* =========================================================
+   GRID TARJETAS
+   ========================================================= */
+.page--perfil .tech-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:16px;
+  margin-top: 14px;
+}
+
+.page--perfil .skill-card{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 16px;
+  overflow:hidden;
+  min-width:0;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.page--perfil .skill-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(16,185,129,.16);
+  background: rgba(255,255,255,.025);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+.page--perfil .skill-info{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.page--perfil .skill-info strong{
+  font-weight: 900;
+  color: rgba(233,241,255,.92);
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.page--perfil .skill-pct{
+  font-weight:900;
+  color:#10b981;
+  flex:0 0 auto;
+}
+
+.page--perfil .skill-category{
+  display:block !important;
+  color:#94a3b8 !important;
+  font-size: 0.85rem !important;
+  margin-top: 4px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+/* Barra tarjeta */
+.page--perfil .progress-container-static{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.06);
+  height: 8px;
+  border-radius: 999px;
+  overflow:hidden;
+}
+.page--perfil .progress-bar-fill{
+  height:100%;
+  background:#10b981;
+  border-radius:999px;
+  box-shadow: 0 0 10px rgba(16,185,129,.25);
+}
+
+/* =========================================================
+   FORMULARIOS (dentro de tabs)
+   ========================================================= */
+.page--perfil .form-container-styled{
+  margin-top: 16px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.page--perfil .form-group{ margin-bottom: 14px; }
+
+.page--perfil .form-group label{
+  display:block;
+  margin-bottom: 8px;
+  color: rgba(233,238,247,.86);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Inputs/selects bonitos + sin doble flecha */
+.page--perfil .form-control,
+.page--perfil .form-control-styled,
+.page--perfil textarea,
+.page--perfil select,
+.page--perfil input[type="text"],
+.page--perfil input[type="email"],
+.page--perfil input[type="url"],
+.page--perfil input[type="date"]{
+  width:100%;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #E9EEF7;
+  padding: 11px 12px;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color .12s ease, box-shadow .12s ease, background .12s ease;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.page--perfil select::-ms-expand{ display:none; }
+
+.page--perfil .form-control:focus,
+.page--perfil .form-control-styled:focus,
+.page--perfil textarea:focus,
+.page--perfil select:focus,
+.page--perfil input[type="text"]:focus,
+.page--perfil input[type="email"]:focus,
+.page--perfil input[type="url"]:focus,
+.page--perfil input[type="date"]:focus{
+  border-color: rgba(16,185,129,.55);
+  box-shadow: var(--focus);
+  background: rgba(255,255,255,.04);
+}
+
+.page--perfil .form-actions,
+.page--perfil .form-actions-modal{
+  display:flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.page--perfil .btn-green-action{
+  background: linear-gradient(135deg, rgba(16,185,129,1), rgba(0,220,200,1));
+  color:#061022;
+  border:0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  box-shadow: 0 12px 26px rgba(16,185,129,.12);
+}
+.page--perfil .btn-green-action:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.page--perfil .btn-cancel,
+.page--perfil .btn-cancel-modal,
+.page--perfil .btn-secondary-cancel{
+  background: rgba(255,255,255,.04);
+  color:#FCA5A5;
+  border: 1px solid rgba(239,68,68,.25);
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-weight: 900;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.14);
+}
+.page--perfil .btn-cancel:hover,
+.page--perfil .btn-cancel-modal:hover,
+.page--perfil .btn-secondary-cancel:hover{
+  transform: translateY(-1px);
+  background: rgba(239,68,68,.10);
+  border-color: rgba(239,68,68,.35);
+}
+
+/* Range bonito */
+.page--perfil .range-styled{
+  width:100%;
+  appearance:none;
+  -webkit-appearance:none;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.06);
+  outline:none;
+}
+.page--perfil .range-styled::-webkit-slider-thumb{
+  appearance:none;
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#061022;
+  border: 2px solid #10b981;
+  box-shadow: 0 0 8px rgba(16,185,129,.35);
+  cursor:pointer;
+}
+.page--perfil .range-styled::-moz-range-thumb{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#061022;
+  border: 2px solid #10b981;
+  box-shadow: 0 0 8px rgba(16,185,129,.35);
+  cursor:pointer;
+}
+
+/* =========================================================
+   MODALES
+   ========================================================= */
+.page--perfil .modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.70);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  padding: 18px;
+  overflow:auto;
+}
+
+.page--perfil .modal-content,
+.page--perfil .modal-box{
+  background: #0b0f1a;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  max-width: 700px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 22px;
+  box-shadow: var(--shadow-3);
+}
+
+.page--perfil .modal-title{ margin: 0 0 12px; font-weight: 900; }
+
+/* Upload */
+.page--perfil .upload-area,
+.page--perfil .upload-zone{
+  border: 2px dashed rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 18px;
+  text-align:center;
+  background: rgba(255,255,255,.02);
+  cursor:pointer;
+  transition: border-color .2s ease, background .2s ease, transform .12s ease;
+}
+.page--perfil .upload-area:hover,
+.page--perfil .upload-zone:hover{
+  border-color: rgba(16,185,129,.55);
+  background: rgba(16,185,129,.06);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CERTIFICACIONES GRID
+   ========================================================= */
+.page--perfil .certifications-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.page--perfil .cert-card{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 16px;
+  display:flex;
+  gap: 14px;
+  min-width:0;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.page--perfil .cert-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(16,185,129,.16);
+  background: rgba(255,255,255,.025);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+.page--perfil .cert-details{ min-width:0; }
+.page--perfil .cert-details h4{
+  margin:0 0 6px;
+  font-weight: 900;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.page--perfil .cert-org{ margin:0 0 10px; color:#94a3b8; font-size: 13px; }
+.page--perfil .cert-date{ margin:0; color:#94a3b8; font-size: 12px; }
+
+.page--perfil .cert-links{ margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; }
+.page--perfil .btn-verify,
+.page--perfil .btn-view-pdf,
+.page--perfil .btn-view-file{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration:none;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.02);
+  color:#E9EEF7;
+  font-weight: 900;
+  font-size: 12px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
+}
+.page--perfil .btn-verify:hover,
+.page--perfil .btn-view-pdf:hover,
+.page--perfil .btn-view-file:hover{
+  background: rgba(255,255,255,.05);
+  border-color: rgba(16,185,129,.35);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   PROYECTOS GRID
+   ========================================================= */
+.page--perfil .project-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.page--perfil .project-card{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  overflow:hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.page--perfil .project-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(16,185,129,.16);
+  background: rgba(255,255,255,.015);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+
+.page--perfil .project-card img{
+  width:100%;
+  height: 160px;
+  object-fit: cover;
+  display:block;
+}
+
+.page--perfil .spacer-xxl{ height: 40px; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1180px){
+  .page--perfil .profile-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page--perfil .tech-grid{ grid-template-columns: 1fr; }
+  .page--perfil .certifications-grid{ grid-template-columns: 1fr; }
+  .page--perfil .project-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 980px){
+  .page--perfil .layout{ grid-template-columns: 86px 1fr; }
+
+  .page--perfil .brand__text,
+  .page--perfil .nav__label,
+  .page--perfil .logout .logout__text,
+  .page--perfil .userchip__info{ display:none; }
+
+  .page--perfil .sidebar{ padding: 14px 10px; }
+  .page--perfil .nav__item{ justify-content:center; }
+  .page--perfil .userchip{ justify-content:center; }
+  .page--perfil .userchip__mail{ display:none; }
+}
+
+@media (max-width: 640px){
+  .page--perfil .main{ padding: 18px 16px; }
+  .page--perfil .pageheader__title{ font-size: 22px; }
+  .page--perfil .header-section{ flex-direction: column; align-items: flex-start; }
+
+  .page--perfil .card__head{ flex-wrap: wrap; gap: 10px; }
+  .page--perfil .card__head .btn,
+  .page--perfil .card__head button:not([class]),
+  .page--perfil .card__head a:not([class]){
+    width: 100%;
+  }
+
+  /* mantiene el aire lateral también en móvil */
+  .page--perfil .container{ padding-left: 12px; padding-right: 12px; }
+}
+
+/* =========================================================
+   FIX PACK (NO CAMBIA TU DISEÑO) · SOLO EVITA BUGS
+   PÉGALO AL FINAL DEL ARCHIVO
+   ========================================================= */
+
+/* 1) Scope correcto para tabs (evita conflictos con otras páginas) */
+.page--perfil .tab-content{ display:none; }
+.page--perfil .tab-content.is-active{ display:block; }
+
+/* 2) Helpers que usa tu PHP y no existían (habilidades moradas)
+      ✅ AJUSTE: como me pediste, “Jugar” y similares vuelven a VERDE */
+.page--perfil .skill-pct-purple{
+  font-weight: 900;
+  color: #10b981; /* antes morado */
+  flex: 0 0 auto;
+}
+
+.page--perfil .purple-fill{
+  background: #10b981 !important; /* antes morado */
+  box-shadow: 0 0 10px rgba(16,185,129,.25) !important;
+}
+
+/* 3) Empty state (certificaciones / proyectos / etc.) */
+.page--perfil .empty-state{
+  margin: 14px 18px 18px;
+  border-radius: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  text-align:center;
+}
+
+.page--perfil .empty-icon{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  color: rgba(233,241,255,.25);
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.05);
+  font-size: 26px;
+}
+
+/* 4) Grid 2 columnas (lo usas en modales) */
+.page--perfil .grid-2{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 640px){
+  .page--perfil .grid-2{ grid-template-columns: 1fr; }
+}
+
+/* 5) Botones morados (modal habilidades/certs/proyectos)
+      ✅ AJUSTE: “Agregar Proyecto” y botones de acción se alinean al estilo de tus botones (verde/teal) */
+.page--perfil .btn-purple,
+.page--perfil .btn-purple-action,
+.page--perfil .btn-purple-lg{
+  background: linear-gradient(135deg, rgba(16,185,129,1), rgba(0,220,200,1));
+  color:#061022;
+  border:0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  box-shadow: 0 12px 26px rgba(16,185,129,.14);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  text-decoration:none;
+}
+.page--perfil .btn-purple:hover,
+.page--perfil .btn-purple-action:hover,
+.page--perfil .btn-purple-lg:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* 6) Botón outline (lo usas en “Tecnologías utilizadas”) */
+.page--perfil .btn-outline{
+  appearance:none;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--c-text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+.page--perfil .btn-outline:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.05);
+  border-color: rgba(16,185,129,.26);
+}
+
+/* 7) Input group (proyectos) */
+.page--perfil .input-group{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+.page--perfil .input-group .form-control{ flex: 1 1 auto; }
+
+/* 8) Header/footer del modal del proyecto (para que no se rompa) */
+.page--perfil .modal-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* ✅ AJUSTE: tipografía/estética del modal “Nuevo Proyecto” (más pro y consistente) */
+.page--perfil .modal-header h3,
+.page--perfil .modal-title{
+  font-size: 20px;
+  letter-spacing: .2px;
+  font-weight: 950;
+  line-height: 1.2;
+}
+
+.page--perfil .modal-content,
+.page--perfil .modal-box{
+  /* un poquito más “premium” sin cambiar tu estilo */
+  background: linear-gradient(180deg, rgba(11,15,26,.96), rgba(11,15,26,.92));
+}
+
+/* inputs del modal un poquito más elegantes */
+.page--perfil .modal-content input,
+.page--perfil .modal-content textarea,
+.page--perfil .modal-content select,
+.page--perfil .modal-box input,
+.page--perfil .modal-box textarea,
+.page--perfil .modal-box select{
+  font-weight: 800;
+  letter-spacing: .15px;
+}
+.page--perfil .modal-content textarea{ resize: vertical; min-height: 92px; }
+
+/* ✅ AJUSTE: botón cerrar más limpio */
+.page--perfil .close-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: rgba(233,238,247,.85);
+  font-size: 22px;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.page--perfil .close-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.05);
+  border-color: rgba(16,185,129,.26);
+}
+
+.page--perfil .modal-footer{
+  display:flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.page--perfil .modal-footer > *{ flex: 1 1 auto; }
+
+/* 9) Modales más estables (scroll interno si se alarga) */
+.page--perfil .modal-content,
+.page--perfil .modal-box{
+  max-height: calc(100vh - 80px);
+  overflow:auto;
+}
+
+/* 10) Compatibilidad si tu JS abre modal con clase */
+.page--perfil .modal.is-open{ display:block; }
+
+/* =========================================================
+   FIX PACK 2 (SOLO UI / COHERENCIA) · SIN ROMPER NADA
+   ========================================================= */
+
+/* ✅ A) Botón “+ Nuevo” (Proyectos) igual a tus botones verdes */
+.page--perfil .btn-new,
+.page--perfil .btn-nuevo,
+.page--perfil .btn--new,
+.page--perfil .new-btn,
+.page--perfil .btn-add-new,
+.page--perfil .btn-add-project,
+.page--perfil .btn-new-project,
+.page--perfil .project-new,
+.page--perfil .project-add{
+  background: linear-gradient(135deg, rgba(16,185,129,1), rgba(0,220,200,1));
+  color:#061022;
+  border: 0;
+  box-shadow: 0 12px 26px rgba(16,185,129,.12);
+}
+.page--perfil .btn-new:hover,
+.page--perfil .btn-nuevo:hover,
+.page--perfil .btn--new:hover,
+.page--perfil .new-btn:hover,
+.page--perfil .btn-add-new:hover,
+.page--perfil .btn-add-project:hover,
+.page--perfil .btn-new-project:hover,
+.page--perfil .project-new:hover,
+.page--perfil .project-add:hover{
+  filter: brightness(1.05);
+}
+
+/* ✅ B) “Subir imagen” (zona) del modal más bonita y consistente */
+.page--perfil .upload-area,
+.page--perfil .upload-zone{
+  border-style: dashed;
+  border-width: 2px;
+  border-color: rgba(255,255,255,.16);
+}
+.page--perfil .upload-area .upload-icon,
+.page--perfil .upload-zone .upload-icon{
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
+}
+
+/* ✅ C) MÁS ESPACIO general para que nada se pegue a las esquinas */
+.page--perfil .card__head{ padding-left: 20px; padding-right: 20px; }
+.page--perfil .card__body{ padding-left: 20px; padding-right: 20px; }
+.page--perfil .tech-item-header,
+.page--perfil .tech-row{ padding-left: 14px; padding-right: 14px; }
+
+/* ✅ D) Pequeño ajuste visual para títulos dentro de modales */
+.page--perfil .modal-content label,
+.page--perfil .modal-box label{
+  font-weight: 900;
+  letter-spacing: .15px;
+}
+.page--perfil .modal-content ::placeholder,
+.page--perfil .modal-box ::placeholder{
+  color: rgba(233,238,247,.38);
+  font-weight: 800;
+}
+
+/* =========================================================
+   ✅ FIX DEFINITIVO · LENGUAJES (NO AFECTA OTROS TABS)
+   OBJETIVO:
+   1) "Lenguajes de Programación" + botón "+ Agregar" ARRIBA
+   2) Grid (tarjetas) EN MEDIO
+   3) Lista con barras y botón "Eliminar" HASTA ABAJO
+   ========================================================= */
+
+/* 0) Muy importante: NO volvemos flex a TODOS los tab-content.
+      Solo convertimos en flex AL TAB que tenga .tech-grid y (.tech-list o .item-list) dentro.
+      Eso coincide con Lenguajes sin romper Perfil/Habilidades/etc. */
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.tech-list),
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.item-list){
+  display:flex !important;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 1) Orden dentro de ese tab (Lenguajes) */
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.tech-list) .header-section,
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.item-list) .header-section{
+  order: 1;
+}
+
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.tech-list) .tech-grid,
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.item-list) .tech-grid{
+  order: 2;
+}
+
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.tech-list) .tech-list,
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.item-list) .item-list{
+  order: 3;
+  margin-top: 10px;
+}
+
+/* 2) Aire extra para que el botón "+ Agregar" no quede pegado */
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.tech-list) .header-section,
+.page--perfil .tab-content.is-active:has(.tech-grid):has(.item-list) .header-section{
+  padding-right: 6px;
+}
+
+/* 3) Si tu navegador no soporta :has (algunos viejos),
+      este fallback NO rompe nada: solo le da margen a la lista */
+@supports not selector(:has(*)){
+  .page--perfil .tech-list,
+  .page--perfil .item-list{ margin-top: 18px; }
+}
+
+/* Contenedor general de la habilidad */
+.skill-container {
+    margin-bottom: 20px;
+}
+
+.btn-action {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px; /* O 50% para circulares */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-action.edit {
+    background-color: #3dd1ae; /* Verde de tu diseño */
+    color: #000;
+}
+
+.btn-action:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.btn-delete-icon {
+    background-color: #ff5f5f; /* Rojo coral de la imagen */
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* Lo hace perfectamente circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease, background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-delete-icon:hover {
+    background-color: #ff4444;
+    transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+}
+
+
+/* Botón eliminar habilidad (Estilo de la imagen) */
+.btn-delete-hab {
+    position: absolute;
+    right: 20px;      /* Ajuste horizontal */   /* Hace que sobresalga por debajo de la tarjeta */
+    width: 34px;
+    height: 34px;
+    background-color: #ff6b6b; /* Color rojo coral de la imagen */
+    border: none;
+    border-radius: 50%;        /* Forma circular */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    transition: all 0.2s ease;
+    z-index: 5;
+    font-size: 14px;
+}
+
+.btn-delete-hab:hover {
+    background-color: #fa5252;
+    transform: scale(1.1);
+}
+
+/* Opcional: Ajustar el color verde de la barra si quieres que sea idéntico a la foto */
+.purple-fill {
+    background: linear-gradient(90deg, #3dd1ae, #2bb191) !important;
+}
+
+.cert-item-wrapper {
+    position: relative; /* Clave para el anclaje */
+    margin-bottom: 25px; /* Espacio para que el botón no pise la tarjeta de abajo */
+}
+
+.skill-item-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Contenedor base para asegurar que el botón se posicione respecto a la tarjeta */
+.cert-card, .project-card {
+    position: relative;
+    overflow: hidden; /* Evita que el botón sobresalga de bordes redondeados */
+}
+
+/* El botón de eliminar fijo */
+.btn-delete-absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.1); /* Fondo sutil rojo */
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.btn-delete-absolute:hover {
+    background: #ef4444; /* Rojo intenso al pasar el mouse */
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Ajuste opcional para que el título no choque con el botón */
+.cert-details h4, .project-card h4 {
+    padding-right: 30px;
+}
+
+
+/* Esto afecta al campo donde escribes y a sus sugerencias nativas */
+input[list] {
+    background-color: #1a1d21 !important; /* Color oscuro de tu fondo */
+    color: #ffffff !important;           /* Texto blanco */
+    border: 1px solid #333d49 !important;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Para navegadores basados en Chrome/Edge, esto ayuda a quitar el fondo blanco del autocompletado */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #1a1d21 inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+/* Estilo para el contenedor del select */
+.form-control-styled {
+    background-color: #1a1d21 !important; /* Fondo oscuro */
+    color: #ffffff !important;           /* Texto blanco */
+    border: 1px solid #333d49 !important;
+    padding: 10px;
+    border-radius: 8px;
+    appearance: none; /* Quita el estilo por defecto del sistema */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* ESTO ES LO QUE CAMBIA EL COLOR DE LA LISTA */
+.form-control-styled option {
+    background-color: #1a1d21 !important; /* Fondo de la lista */
+    color: #ffffff !important;           /* Texto de la lista */
+    padding: 10px;
+}
+
+/* Estilo para cuando el select está enfocado */
+.form-control-styled:focus {
+    border-color: #2bb191 !important; /* Verde de tu tema */
+    outline: none;
+}
+
+/* Para Firefox, esto ayuda a que el desplegable sea oscuro */
+.form-control-styled:hover {
+    background-color: #24282d !important;
+}
+
+
+
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+/* Estilo base para inputs y selects */
+.form-control-styled {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #1a1d21 !important; /* Fondo oscuro de tu tarjeta */
+    color: white !important;               /* Texto blanco */
+    border: 1px solid #333d49;
+    border-radius: 8px;
+    
+    /* ESTA LÍNEA QUITA EL FONDO BLANCO DEL DESPLEGABLE */
+    color-scheme: dark; 
+    
+    transition: border-color 0.2s;
+}
+
+.form-control-styled:focus {
+    border-color: #2bb191; /* Verde esmeralda de tu diseño */
+    outline: none;
+}
+
+/* Estilo para las opciones dentro del select */
+.form-control-styled option {
+    background-color: #1a1d21;
+    color: white;
+}
+
+
+.range-styled {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #333d49; /* Fondo gris de la barra */
+    outline: none;
+    cursor: pointer;
+    /* Degradado verde que actúa como progreso */
+    background-image: linear-gradient(#2bb191, #2bb191) !important;
+    background-repeat: no-repeat !important;
+    background-size: 50% 100%; /* Este valor lo controla el JS */
+}
+
+/* El círculo que se mueve (Chrome, Edge, Safari) */
+.range-styled::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #1a1d21;
+    border: 2px solid #2bb191;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(43, 177, 145, 0.6);
+}
+
+/* El círculo que se mueve (Firefox) */
+.range-styled::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #1a1d21;
+    border: 2px solid #2bb191;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
